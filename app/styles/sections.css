@@ -1293,6 +1293,10 @@ body {
   z-index: 1;
   filter: grayscale(1) contrast(1.02);
   box-shadow: 0 18px 40px rgba(15, 15, 15, 0.18);
+  transition: filter 0.6s ease;
+}
+.about__sticker:hover .about__sticker-fg {
+  filter: grayscale(0) contrast(1);
 }
 /* The h2 inside .about__images is the script tagline under the portrait.
    Drop every style inherited from the earlier kimbrandesign rule. */
