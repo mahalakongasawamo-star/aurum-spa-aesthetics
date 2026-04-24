@@ -980,28 +980,98 @@ body {
 }
 .testimonies__list {
   display: grid;
-  gap: 0;
+  grid-template-columns: repeat(auto-fit, minmax(300px, 1fr));
+  gap: 28px;
   margin: 40px 0;
 }
 .testimonial-card {
-  padding: 40px 0;
-  border-top: 1px solid rgba(15, 15, 15, 0.1);
+  position: relative;
+  overflow: hidden;
+  padding: 40px 34px 32px;
+  margin: 0;
+  border-radius: 20px;
+  background: #fff;
+  border: 1px solid rgba(15, 15, 15, 0.08);
+  box-shadow: 0 4px 16px rgba(15, 15, 15, 0.04);
+  transition:
+    transform 0.5s cubic-bezier(0.2, 0.8, 0.2, 1),
+    box-shadow 0.5s ease,
+    border-color 0.5s ease;
+  will-change: transform, box-shadow;
 }
-.testimonial-card:first-child {
-  border-top: none;
+.testimonial-card:hover {
+  transform: translateY(-10px) scale(1.015);
+  box-shadow: 0 26px 60px rgba(15, 15, 15, 0.14);
+  border-color: rgba(15, 15, 15, 0.14);
+}
+/* Glow — absolute radial wash in Aurum cream. Opacity 0 at rest,
+   fades in softly on hover of the card. */
+.testimonial-glow {
+  position: absolute;
+  inset: -40%;
+  pointer-events: none;
+  z-index: 0;
+  background: radial-gradient(
+    circle at center,
+    rgba(244, 236, 216, 0.9) 0%,
+    rgba(244, 236, 216, 0.45) 30%,
+    rgba(244, 236, 216, 0) 60%
+  );
+  opacity: 0;
+  filter: blur(30px);
+  transition: opacity 0.55s ease;
+}
+.testimonial-card:hover .testimonial-glow {
+  opacity: 1;
+}
+/* Keep quote + credit layered above the glow. */
+.testimonial-quote,
+.testimonial-credit {
+  position: relative;
+  z-index: 1;
 }
 .testimonial-quote {
   font-family: var(--font-tertiary);
-  font-size: 26px;
-  line-height: 1.4;
-  margin: 0 0 16px 0;
+  font-size: 22px;
+  line-height: 1.45;
+  margin: 0 0 24px 0;
   color: var(--color-fg-default);
 }
-.testimonial-author {
-  font-size: 13px;
-  letter-spacing: 0.12em;
+.testimonial-credit {
+  display: flex;
+  align-items: center;
+  gap: 14px;
+  margin: 0;
+}
+.testimonial-avatar {
+  flex: 0 0 auto;
+  width: 48px;
+  height: 48px;
+  border-radius: 50%;
+  overflow: hidden;
+  display: inline-block;
+}
+.testimonial-avatar img {
+  display: block;
+  width: 100%;
+  height: 100%;
+  object-fit: cover;
+}
+.testimonial-meta {
+  display: flex;
+  flex-direction: column;
+  gap: 2px;
+}
+.testimonial-name {
+  font-size: 14px;
+  font-weight: 500;
+  color: var(--color-fg-default);
+  letter-spacing: 0.04em;
+}
+.testimonial-title {
+  font-size: 11px;
+  letter-spacing: 0.18em;
   text-transform: uppercase;
-  font-style: normal;
   opacity: 0.6;
 }
 
