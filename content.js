@@ -17,10 +17,10 @@ const CONTENT = {
   meta: {
     siteTitle:       'Aurum Spa & Aesthetics',
     tagline:         'The Gold Standard in Luxury Aesthetics & Wellness.',
-    metaTitle:       'Aurum Spa & Aesthetics | Luxury Med Spa & Day Spa — Washington, D.C.',
-    metaDescription: 'Aurum Spa & Aesthetics is Washington D.C.\'s premier luxury med spa and day spa, located at 1617 Massachusetts Avenue NW on Embassy Row. Expert injectables, laser treatments, gold facials, massage, and bespoke wellness experiences.',
-    ogTitle:         'Aurum Spa & Aesthetics — Washington D.C.\'s Gold Standard in Luxury & Aesthetics',
-    ogDescription:   'Where clinical precision meets restorative luxury. Book your Aurum experience — D.C.\'s most exclusive med spa and day spa destination on Embassy Row.',
+    metaTitle:       'Aurum Spa & Aesthetics | Luxury Med Spa & Day Spa — Beverly Hills, CA',
+    metaDescription: 'Aurum Spa & Aesthetics is Beverly Hills\' premier luxury med spa and day spa, located at 9500 Wilshire Blvd. Expert injectables, laser treatments, gold facials, massage, and bespoke wellness experiences for the city\'s most discerning clientele.',
+    ogTitle:         'Aurum Spa & Aesthetics — Beverly Hills\' Gold Standard in Luxury & Aesthetics',
+    ogDescription:   'Where clinical precision meets restorative luxury. Book your Aurum experience — Beverly Hills\' most exclusive med spa and day spa destination on Wilshire Boulevard.',
   },
 
   /* ─── NAVIGATION ─── */
@@ -39,9 +39,9 @@ const CONTENT = {
 
   /* ─── SECTION 1: HERO ─── */
   hero: {
-    eyebrow:    'Washington D.C.\'s Gold Standard in Luxury Aesthetics & Wellness',
+    eyebrow:    'Beverly Hills\' Gold Standard in Luxury Aesthetics & Wellness',
     headline:   'The Finest Version\nof You Awaits.',
-    subheadline:'Aurum Spa & Aesthetics is Washington D.C.\'s most distinguished sanctuary for advanced aesthetic medicine and restorative luxury — where clinical precision is delivered with the elegance it deserves.',
+    subheadline:'Aurum Spa & Aesthetics is Beverly Hills\' most distinguished sanctuary for advanced aesthetic medicine and restorative luxury — where clinical precision is delivered with the elegance it deserves.',
     ctaPrimary: 'Reserve Your Experience',
     ctaSecondary: 'Discover Aurum',
   },
@@ -52,7 +52,7 @@ const CONTENT = {
     headline: 'Gold Is Not a Color.\nIt Is a Commitment.',
     body: [
       'The name Aurum is Latin for gold — and it reflects everything we stand for. At Aurum Spa & Aesthetics, gold is not a marketing word. It is the standard to which we hold every treatment, every interaction, and every result we deliver.',
-      'Our Washington D.C. sanctuary was conceived as the city\'s most refined destination for those who will accept nothing less than the best. Here, world-class aesthetic medicine meets deeply restorative spa ritual — in a space designed to make you feel as extraordinary as you look.',
+      'Our Beverly Hills sanctuary was conceived as the city\'s most refined destination for those who will accept nothing less than the best. Here, world-class aesthetic medicine meets deeply restorative spa ritual — in a space designed to make you feel as extraordinary as you look.',
     ],
     pullQuote: '"Aurum. Latin for gold. The standard for everything."',
   },
@@ -125,12 +125,12 @@ const CONTENT = {
   daySpa: {
     label:       'Aurum Spa',
     headline:    'Restorative Rituals\nWorthy of the Name.',
-    description: 'The Aurum Spa is a retreat from the rhythm of the capital — a private world of warmth, stillness, and sensory ritual designed to restore not just the body, but the entire self. Every treatment is an unhurried, considered experience.',
+    description: 'The Aurum Spa is a retreat from the rhythm of the city — a private world of warmth, stillness, and sensory ritual designed to restore not just the body, but the entire self. Every treatment is an unhurried, considered experience.',
     services: [
       {
         id:          'signature-facial',
         name:        'The Aurum Signature Facial',
-        description: 'Our definitive facial — a 90-minute bespoke experience built around your skin on the day of your visit. Includes deep cleansing, enzyme exfoliation, extractions, custom masking, gold-infused serum layering, and a personalized finishing protocol.',
+        description: 'Our definitive facial — a 90-minute bespoke experience built around your skin on the day of your visit. Includes deep cleansing, enzyme exfoliation, extractions, custom masking, gold-infused serum layering, and a personalized finishing protocol selected by your esthetician.',
         duration:    '90 minutes',
         price:       '$295',
       },
@@ -151,21 +151,21 @@ const CONTENT = {
       {
         id:          'swedish',
         name:        'Swedish Massage',
-        description: 'A masterfully executed full-body massage using long, fluid strokes designed to dissolve muscular tension, improve circulation, and guide the nervous system into genuine rest.',
+        description: 'A masterfully executed full-body massage using long, fluid strokes designed to dissolve muscular tension, improve circulation, and guide the nervous system into genuine rest. The foundation of all great spa practice.',
         duration:    '60 or 90 minutes',
         price:       '$185 / $255',
       },
       {
         id:          'deep-tissue',
         name:        'Deep Tissue Massage',
-        description: 'Targeted therapeutic pressure applied to chronically tense and overworked muscle groups — the shoulders, neck, lower back, and hips that bear the weight of a high-performance life.',
+        description: 'Targeted therapeutic pressure applied to chronically tense and overworked muscle groups — the shoulders, neck, lower back, and hips that bear the weight of a high-performance life. Restorative without being punishing.',
         duration:    '60 or 90 minutes',
         price:       '$205 / $275',
       },
       {
         id:          'hot-stone',
         name:        'Hot Stone Massage',
-        description: 'Heated basalt stones used in concert with hands-on technique to release deep muscular tension, improve circulation, and produce a profoundly grounding sense of full-body calm.',
+        description: 'Heated basalt stones are used in concert with hands-on technique to release deep muscular tension, improve circulation, and produce a profoundly grounding sense of full-body calm. A timeless ritual, executed without compromise.',
         duration:    '90 minutes',
         price:       '$295',
       },
@@ -179,7 +179,7 @@ const CONTENT = {
       {
         id:          'gold-body',
         name:        'Gold Body Ritual — Aurum Signature',
-        description: 'A full-body exfoliation using a hand-blended gold mineral scrub, followed by a warm 24k gold-infused body wrap, and sealed with a luxurious body oil application.',
+        description: 'Our most iconic body treatment. A full-body exfoliation using a hand-blended gold mineral scrub, followed by a warm 24k gold-infused body wrap, and sealed with a luxurious body oil application. An experience as much as a treatment.',
         duration:    '90 minutes',
         price:       '$365',
       },
@@ -200,14 +200,14 @@ const CONTENT = {
       {
         id:          'scalp',
         name:        'Aurum Scalp Ritual',
-        description: 'A deeply restorative treatment for the scalp and crown — beginning with a warm oil infusion massage, progressing through a purifying scalp treatment, and finishing with a nourishing follicle mask.',
+        description: 'A deeply restorative treatment for the scalp and crown — beginning with a warm oil infusion massage, progressing through a purifying scalp treatment, and finishing with a nourishing follicle mask. Profoundly tension-releasing.',
         duration:    '45 minutes',
         price:       '$155',
       },
       {
         id:          'foot-hand',
         name:        'Foot & Hand Ritual',
-        description: 'Far beyond a standard treatment. Our foot and hand rituals are full sensory experiences — mineral exfoliation, warm paraffin immersion, extended sculpting massage, and a long-wear finishing treatment.',
+        description: 'Far beyond a standard treatment. Our foot and hand rituals are full sensory experiences — mineral exfoliation, warm paraffin immersion, extended sculpting massage, and a long-wear finishing treatment for hands or feet.',
         duration:    '60 minutes',
         price:       '$135',
       },
@@ -251,7 +251,7 @@ const CONTENT = {
     items: [
       {
         title: 'Clinical Mastery',
-        body:  'Every medical aesthetic treatment at Aurum is performed or directly supervised by licensed, credentialed medical professionals. We hold our clinical standards to the same level as the finest aesthetic practices in New York, London, and Beverly Hills.',
+        body:  'Every medical aesthetic treatment at Aurum is performed or directly supervised by licensed, credentialed medical professionals. We hold our clinical standards to the same level as the finest aesthetic practices in New York, London, and Beverly Hills — because our clients expect nothing less.',
       },
       {
         title: 'The Personal Protocol',
@@ -259,7 +259,7 @@ const CONTENT = {
       },
       {
         title: 'Absolute Discretion',
-        body:  'Aurum is situated in Washington D.C.\'s most distinguished corridor — and our clientele reflects it. We maintain absolute privacy and confidentiality as a foundational principle, not a policy footnote.',
+        body:  'Aurum is situated in one of Beverly Hills\' most distinguished corridors — and our clientele reflects it. We maintain absolute privacy and confidentiality as a foundational principle, not a policy footnote. What happens at Aurum stays at Aurum.',
       },
     ],
   },
@@ -267,11 +267,11 @@ const CONTENT = {
   /* ─── SECTION 6: ABOUT ─── */
   about: {
     label:    'Our Story',
-    headline: 'Washington D.C.\'s\nGold Standard. Built Intentionally.',
+    headline: 'Beverly Hills\'\nGold Standard. Built Intentionally.',
     body: [
-      'Aurum Spa & Aesthetics was founded on a single, non-negotiable belief: that Washington D.C. deserved a spa and aesthetics destination that matched the caliber of the city itself. A place built not to impress at first glance, but to consistently deliver — at every appointment, for every client, without exception.',
+      'Aurum Spa & Aesthetics was founded on a single, non-negotiable belief: that Beverly Hills deserved a spa and aesthetics destination that matched the caliber of the city itself. A place built not to impress at first glance, but to consistently deliver — at every appointment, for every client, without exception.',
       'Our team is composed of board-certified medical professionals, licensed master estheticians, certified massage therapists, and wellness practitioners — each selected for both their technical mastery and their ability to make every guest feel genuinely cared for, not simply processed.',
-      'We chose Massachusetts Avenue NW deliberately. Embassy Row is Washington\'s most storied address — and Aurum belongs here. Whether you are a D.C. resident, a government official, a visiting executive, or a dignitary passing through the capital, our doors are open and our standard is the same: gold.',
+      'We chose Wilshire Boulevard deliberately. The heart of Beverly Hills is one of the world\'s most storied addresses — and Aurum belongs here. Whether you are a long-time Beverly Hills resident, a Hollywood professional, a visiting executive, or a discerning traveler passing through, our doors are open and our standard is the same: gold.',
     ],
   },
 
@@ -281,24 +281,24 @@ const CONTENT = {
     headline: 'The Aurum Experience,\nIn Their Words.',
     items: [
       {
-        quote:  'Aurum has completely redefined what I expect from a spa. The level of clinical expertise paired with genuine luxury — there is simply nothing else like it in Washington.',
+        quote:  'Aurum has completely redefined what I expect from a spa. The level of clinical expertise paired with genuine luxury — there is simply nothing else like it in Beverly Hills.',
         author: 'M.L.',
-        location: 'Georgetown',
+        location: 'Bel Air',
       },
       {
         quote:  'I came in for the full-day retreat and left feeling like the best version of myself. Every single person on that team was exceptional. I have already booked my next three visits.',
         author: 'R.A.',
-        location: 'Capitol Hill',
+        location: 'West Hollywood',
       },
       {
-        quote:  'The combination of medical aesthetics and world-class spa treatments under one roof is exactly what D.C. has been missing. Aurum fills that gap perfectly.',
+        quote:  'The combination of medical aesthetics and world-class spa treatments under one roof is exactly what Beverly Hills has been missing. Aurum fills that gap perfectly.',
         author: 'C.T.',
-        location: 'Dupont Circle',
+        location: 'Brentwood',
       },
       {
         quote:  'I have visited premier spas in New York, Paris, and Dubai. Aurum is in that conversation. This is what the gold standard actually looks like.',
         author: 'J.W.',
-        location: 'Embassy Row',
+        location: 'Malibu',
       },
     ],
   },
@@ -309,18 +309,18 @@ const CONTENT = {
     headline:   'Your Gold Standard\nExperience Begins Here.',
     body:       'Every exceptional Aurum experience begins with a conversation. Reserve your appointment online at your convenience, or call our team directly — we are here to ensure your visit is designed around you from the very first moment.',
     ctaPrimary: 'Book Your Appointment',
-    ctaSecondary: 'Call Us: (202) 555-0192',
+    ctaSecondary: 'Call Us: (310) 385-7023',
     note:       'New guests are warmly encouraged to arrive 15 minutes early to complete your personal wellness profile. A credit card is required to hold all reservations. We kindly request 24 hours\' notice for any cancellations or changes.',
   },
 
   /* ─── SECTION 9: CONTACT ─── */
   contact: {
     label:    'Visit Aurum',
-    headline: 'Find Us on\nEmbassy Row.',
+    headline: 'Find Us on\nWilshire Boulevard.',
     address: {
       line1: 'Aurum Spa & Aesthetics',
-      line2: '1617 Massachusetts Avenue NW',
-      line3: 'Washington, D.C. 20036',
+      line2: '9500 Wilshire Blvd',
+      line3: 'Beverly Hills, CA 90212',
       line4: 'United States',
     },
     hours: [
@@ -328,16 +328,16 @@ const CONTENT = {
       { days: 'Saturday',        hours: '9:00 AM – 7:00 PM' },
       { days: 'Sunday',          hours: '10:00 AM – 6:00 PM' },
     ],
-    phone:           '(202) 555-0192',
-    email:           'hello@aurumspaDC.com',
-    neighborhoodNote:'Aurum is located on Massachusetts Avenue NW in the heart of Dupont Circle and Embassy Row. Easily accessible via the Red Line Metro (Dupont Circle station) with street parking on Massachusetts Avenue and garage parking nearby.',
+    phone:           '(310) 385-7023',
+    email:           'hello@aurumspaBH.com',
+    neighborhoodNote:'Aurum is located on Wilshire Boulevard in the heart of Beverly Hills — one of the world\'s most prestigious addresses. Easily accessible from Rodeo Drive, the 405 and 10 freeways, with valet parking available and street parking on Wilshire Boulevard.',
   },
 
   /* ─── FOOTER ─── */
   footer: {
-    tagline: 'Aurum Spa & Aesthetics — Washington, D.C.',
+    tagline: 'Aurum Spa & Aesthetics — Beverly Hills, CA.',
     subTagline: 'The Gold Standard in Luxury Aesthetics & Wellness.',
-    legal:   '© 2025 Aurum Spa & Aesthetics. All rights reserved. 1617 Massachusetts Avenue NW, Washington, D.C. 20036. Medical aesthetic services are performed or supervised by licensed medical professionals. Individual results may vary.',
+    legal:   '© 2025 Aurum Spa & Aesthetics. All rights reserved. 9500 Wilshire Blvd, Beverly Hills, CA 90212. Medical aesthetic services are performed or supervised by licensed medical professionals. Individual results may vary.',
     social: [
       { platform: 'Instagram', href: '#' },
       { platform: 'Facebook',  href: '#' },
