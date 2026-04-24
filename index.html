@@ -1,0 +1,291 @@
+<!doctype html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1" />
+  <title>Aurum Spa &amp; Aesthetics | Luxury Med Spa &amp; Day Spa — Washington, D.C.</title>
+  <meta name="description" content="Aurum Spa &amp; Aesthetics is Washington D.C.'s premier luxury med spa and day spa, located at 1617 Massachusetts Avenue NW on Embassy Row. Expert injectables, laser treatments, gold facials, massage, and bespoke wellness experiences." />
+  <meta name="generator" content="Aurum Spa &amp; Aesthetics" />
+  <meta property="og:title" content="Aurum Spa &amp; Aesthetics — Washington D.C.'s Gold Standard in Luxury &amp; Aesthetics" />
+  <meta property="og:type" content="website" />
+  <meta property="og:url" content="https://aurumspadc.com/" />
+  <meta property="og:description" content="Where clinical precision meets restorative luxury. Book your Aurum experience — D.C.'s most exclusive med spa and day spa destination on Embassy Row." />
+  <meta property="og:image" content="" />
+  <meta property="og:image:alt" content="Aurum Spa &amp; Aesthetics — Washington, D.C." />
+  <link rel="stylesheet" href="app/styles/tokens.css" />
+  <link rel="stylesheet" href="app/styles/base.css" />
+  <link rel="stylesheet" href="app/styles/sections.css" />
+</head>
+<body>
+
+  <!-- 1. Header + primary nav -->
+  <header class="header grid">
+    <div class="pin-spacer">
+      <div class="header__content">
+        <span class="header__logo" data-content="meta.siteTitle">Aurum Spa &amp; Aesthetics</span>
+        <nav data-render="nav"></nav>
+      </div>
+    </div>
+  </header>
+
+  <!-- 2. Hero -->
+  <div class="pin-spacer">
+    <section class="hero" id="home">
+      <img class="hero__background" src="hero2.png" width="1408" height="768" alt="Aurum Spa &amp; Aesthetics — hero visual">
+      <div class="hero__content">
+        <p class="hero__eyebrow" data-content="hero.eyebrow"></p>
+        <h1 data-content="hero.headline"></h1>
+        <p class="hero__subheadline" data-content="hero.subheadline"></p>
+        <div class="hero__ctas">
+          <a class="btn btn--primary" href="#book" data-content="hero.ctaPrimary"></a>
+          <a class="btn btn--secondary" href="#about" data-content="hero.ctaSecondary"></a>
+        </div>
+      </div>
+    </section>
+  </div>
+
+  <!-- 3. About — portrait sticker layout (mirrors kimbrandesign reference design):
+       therapist portrait rotated +3° on top, orange paint abstract rotated -6°
+       behind, script-font tagline beneath, body + scribble on the right. -->
+  <section id="about" class="about grid">
+    <div class="about__images">
+      <div class="about__sticker">
+        <img class="about__sticker-bg" src="assets/About_02.Di9Nhm44_ZeCWQd.webp" alt="" aria-hidden="true">
+        <img class="about__sticker-fg" src="owner.png" alt="Aurum therapist at work">
+      </div>
+      <h2 class="about__tagline" data-content="about.headline"></h2>
+    </div>
+    <div class="about__description">
+      <svg class="about__deco" viewBox="0 0 60 180" aria-hidden="true">
+        <path d="M28 14 C46 8, 54 28, 42 42 C26 56, 24 86, 30 116 C34 140, 40 160, 32 176" fill="none" stroke="currentColor" stroke-width="1.4" stroke-linecap="round"/>
+        <path d="M28 100 C36 97, 44 100, 50 104" fill="none" stroke="currentColor" stroke-width="1.2" stroke-linecap="round"/>
+      </svg>
+      <div class="about__body" data-content="about.body"></div>
+    </div>
+  </section>
+
+  <!-- 4. Sticky nav -->
+  <kim-sticky-nav class="sticky-nav">
+    <ul class="navigation" data-render-list="sticky-nav"></ul>
+  </kim-sticky-nav>
+
+  <!-- 5. Services — the three Aurum Pillars pinned as display tiles -->
+  <section id="services" class="services">
+    <a id="spa" class="anchor" aria-hidden="true"></a>
+    <div class="services__list">
+      <div class="pin-spacer">
+        <!-- Clinical Mastery — faces occupy centre-right of the photo, so the
+             heading sits in the bottom-left (clean reception-counter area). -->
+        <kim-service class="service service--fullscreen service--heading-bl">
+          <div class="service__image-frame">
+            <img class="service__image" src="clinicalmastery.png" alt="Aurum clinical aesthetics — precision treatment detail">
+          </div>
+          <div class="service__overlay">
+            <p class="service__label" data-content="pillars.label"></p>
+            <h3 data-content="pillars.items.0.title"></h3>
+            <p class="service__body" data-content="pillars.items.0.body"></p>
+          </div>
+        </kim-service>
+      </div>
+      <div class="pin-spacer">
+        <!-- Personal Protocol — two faces flank the centre, so heading sits in
+             the bottom-right corner (clean floor/chair edge). Diagonal mirror
+             of Clinical Mastery keeps the pair rhythmic. -->
+        <kim-service class="service service--fullscreen service--heading-br">
+          <div class="service__image-frame">
+            <img class="service__image" src="personalprotocol.png" alt="Aurum personal protocol — private consultation session">
+          </div>
+          <div class="service__overlay">
+            <p class="service__label" data-content="pillars.label"></p>
+            <h3 data-content="pillars.items.1.title"></h3>
+            <p class="service__body" data-content="pillars.items.1.body"></p>
+          </div>
+        </kim-service>
+      </div>
+      <div class="pin-spacer">
+        <kim-service class="service">
+          <p class="service__label" data-content="pillars.label"></p>
+          <h3 data-content="pillars.items.2.title"></h3>
+          <p class="service__body" data-content="pillars.items.2.body"></p>
+        </kim-service>
+      </div>
+    </div>
+  </section>
+
+  <!-- 6. Aesthetics — 8 medical aesthetics services in the tile grid -->
+  <section id="works" class="works">
+    <a id="aesthetics" class="anchor" aria-hidden="true"></a>
+    <div class="works__head">
+      <p class="works__label" data-content="medSpa.label"></p>
+      <h2 data-content="medSpa.headline"></h2>
+      <p class="works__description" data-content="medSpa.description"></p>
+    </div>
+    <div class="works__decos">
+      <svg class="works__deco" aria-hidden="true"></svg>
+      <svg class="works__deco" aria-hidden="true"></svg>
+      <svg class="works__deco" aria-hidden="true"></svg>
+      <svg class="works__deco" aria-hidden="true"></svg>
+      <svg class="works__deco" aria-hidden="true"></svg>
+      <svg class="works__deco" aria-hidden="true"></svg>
+      <svg class="works__deco" aria-hidden="true"></svg>
+      <svg class="works__deco" aria-hidden="true"></svg>
+    </div>
+    <div class="works__list">
+      <kim-work class="work grid">
+        <h3 data-content="medSpa.services.0.name"></h3>
+        <p data-content="medSpa.services.0.description"></p>
+        <p class="work__price" data-content="medSpa.services.0.price"></p>
+      </kim-work>
+      <kim-work class="work grid">
+        <h3 data-content="medSpa.services.1.name"></h3>
+        <p data-content="medSpa.services.1.description"></p>
+        <p class="work__price" data-content="medSpa.services.1.price"></p>
+      </kim-work>
+      <kim-work class="work grid">
+        <h3 data-content="medSpa.services.2.name"></h3>
+        <p data-content="medSpa.services.2.description"></p>
+        <p class="work__price" data-content="medSpa.services.2.price"></p>
+      </kim-work>
+      <kim-work class="work grid">
+        <h3 data-content="medSpa.services.3.name"></h3>
+        <p data-content="medSpa.services.3.description"></p>
+        <p class="work__price" data-content="medSpa.services.3.price"></p>
+      </kim-work>
+      <kim-work class="work grid">
+        <h3 data-content="medSpa.services.4.name"></h3>
+        <p data-content="medSpa.services.4.description"></p>
+        <p class="work__price" data-content="medSpa.services.4.price"></p>
+      </kim-work>
+      <kim-work class="work grid">
+        <h3 data-content="medSpa.services.5.name"></h3>
+        <p data-content="medSpa.services.5.description"></p>
+        <p class="work__price" data-content="medSpa.services.5.price"></p>
+      </kim-work>
+      <kim-work class="work grid">
+        <h3 data-content="medSpa.services.6.name"></h3>
+        <p data-content="medSpa.services.6.description"></p>
+        <p class="work__price" data-content="medSpa.services.6.price"></p>
+      </kim-work>
+      <kim-work class="work grid">
+        <h3 data-content="medSpa.services.7.name"></h3>
+        <p data-content="medSpa.services.7.description"></p>
+        <p class="work__price" data-content="medSpa.services.7.price"></p>
+      </kim-work>
+    </div>
+  </section>
+
+  <!-- 7. Testimonies — auto-rendered from CONTENT.testimonials -->
+  <section id="testimonies">
+    <p class="testimonies__label" data-content="testimonials.label"></p>
+    <h2 data-content="testimonials.headline"></h2>
+    <div class="testimonies__list" data-render="testimonials"></div>
+    <a class="btn" href="#book" data-content="booking.ctaPrimary"></a>
+  </section>
+
+  <!-- 8. Book / reservation -->
+  <section id="book">
+    <p class="book__label" data-content="booking.label"></p>
+    <h2 data-content="booking.headline"></h2>
+    <p class="book__body" data-content="booking.body"></p>
+    <div class="book__ctas">
+      <a class="btn btn--primary" href="mailto:hello@aurumspaDC.com" data-content="booking.ctaPrimary"></a>
+      <a class="btn btn--secondary" href="tel:+12025550192" data-content="booking.ctaSecondary"></a>
+    </div>
+    <p class="book__note" data-content="booking.note"></p>
+  </section>
+
+  <!-- 9. Signature Experiences (3 items via data-render="experiences") -->
+  <section id="team">
+    <a id="experiences" class="anchor" aria-hidden="true"></a>
+    <p class="team__label" data-content="experiences.label"></p>
+    <h2 data-content="experiences.headline"></h2>
+    <p class="team__intro" data-content="experiences.intro"></p>
+    <div class="team__grid" data-render="experiences"></div>
+  </section>
+
+  <!-- 10. Club — Aurum brand statement block -->
+  <section id="club">
+    <img class="club__background" src="assets/Club.DXZn1Moc_d1OLj.webp" alt="">
+    <p class="club__subtitle" data-content="brand.label"></p>
+    <h2 data-content="brand.headline"></h2>
+    <div class="club__body" data-content="brand.body"></div>
+    <p class="club__pull" data-content="brand.pullQuote"></p>
+    <a class="club__link btn" href="#book" data-content="micro.giftCardBanner.cta"></a>
+  </section>
+
+  <!-- 11. FAQs — kept as-is; content.js does not supply FAQ data. -->
+  <section id="faqs">
+    <h2>Frequently Asked</h2>
+    <p>Our approach</p>
+    <kim-faq>
+      <details>
+        <summary>Do I need a consultation before my first treatment?</summary>
+        <div class="faq__answer"><p>Every new guest begins with a private consultation with a member of our medical or spa team. It is unhurried, confidential, and designed around your goals. Only once we understand what you are seeking do we design your experience.</p></div>
+      </details>
+    </kim-faq>
+    <kim-faq>
+      <details>
+        <summary>Are your aesthetic treatments medically supervised?</summary>
+        <div class="faq__answer"><p>Yes. Every medical aesthetic treatment at Aurum is performed or directly supervised by a licensed, credentialed medical professional. Our clinical standard is non-negotiable.</p></div>
+      </details>
+    </kim-faq>
+    <kim-faq>
+      <details>
+        <summary>Do you offer treatments for men?</summary>
+        <div class="faq__answer"><p>Of course. Aurum welcomes all guests. Our aesthetic and spa menus are designed to be equally effective for men and women, and our team is experienced across every treatment we offer.</p></div>
+      </details>
+    </kim-faq>
+    <kim-faq>
+      <details>
+        <summary>What is the cancellation policy?</summary>
+        <div class="faq__answer"><p>We kindly request 24 hours' notice for any cancellations or changes. A credit card is required to hold all reservations.</p></div>
+      </details>
+    </kim-faq>
+    <kim-faq>
+      <details>
+        <summary>Do you offer gift cards?</summary>
+        <div class="faq__answer"><p>Yes. Aurum gift cards are available in any amount — the most thoughtful gift for anyone who deserves the best. Contact us to arrange one.</p></div>
+      </details>
+    </kim-faq>
+    <kim-faq>
+      <details>
+        <summary>Where is Aurum located?</summary>
+        <div class="faq__answer"><p>We are at 1617 Massachusetts Avenue NW, Washington, D.C., in the heart of Dupont Circle and Embassy Row. Easily reached via the Red Line Metro (Dupont Circle) and with nearby street and garage parking.</p></div>
+      </details>
+    </kim-faq>
+  </section>
+
+  <!-- 12. Contact + inline footer links -->
+  <section id="contact">
+    <p class="contact__label" data-content="contact.label"></p>
+    <h2 data-content="contact.headline"></h2>
+    <div class="contact__address">
+      <p data-content="contact.address.line1"></p>
+      <p data-content="contact.address.line2"></p>
+      <p data-content="contact.address.line3"></p>
+      <p data-content="contact.address.line4"></p>
+    </div>
+    <div class="contact__hours" data-render="hours"></div>
+    <p class="contact__phone" data-content="contact.phone"></p>
+    <p class="contact__email" data-content="contact.email"></p>
+    <p class="contact__note" data-content="contact.neighborhoodNote"></p>
+    <a class="contact__link btn" href="mailto:hello@aurumspaDC.com">hello@aurumspaDC.com</a>
+    <p class="contact__legal" data-content="footer.legal"></p>
+    <div class="contact__social" data-render="footer-nav"></div>
+  </section>
+
+  <!-- 13. Snackbar -->
+  <kim-snackbar class="snackbar">Email copied</kim-snackbar>
+
+  <!-- Content data + auto-inject (must load BEFORE scroll.js so ScrollTrigger measures the final DOM) -->
+  <script src="content.js" defer></script>
+  <!-- Lenis 1.1.20 + GSAP 3.12.5 + ScrollTrigger 3.12.5 — self-hosted so the
+       bundle works offline / over file:// and audit tools that probe
+       window.Lenis / window.gsap / window.ScrollTrigger always succeed. -->
+  <script src="app/scripts/vendor/lenis.min.js" defer></script>
+  <script src="app/scripts/vendor/gsap.min.js" defer></script>
+  <script src="app/scripts/vendor/ScrollTrigger.min.js" defer></script>
+  <script src="app/scripts/scroll.js" defer></script>
+  <script src="app/scripts/interactions.js" defer></script>
+</body>
+</html>
