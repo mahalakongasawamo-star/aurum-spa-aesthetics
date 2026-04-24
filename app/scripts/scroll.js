@@ -163,8 +163,9 @@ const HERO_SCALE_END = 0.65;         // "slowly shrinking as the scroll goes dow
 
   /* 4.5a Fullscreen service tile — scrubbed Ken-Burns zoom during the pin
    * + ease-in overlay reveal on entry. Applies to Clinical Mastery and
-   * Personal Protocol; any future tile with `.service--fullscreen` inherits. */
-  gsap.utils.toArray('.service--fullscreen').forEach((tile) => {
+   * Personal Protocol. Absolute Discretion opts out via `.service--discretion`
+   * and gets a dedicated, more pronounced zoom below. */
+  gsap.utils.toArray('.service--fullscreen:not(.service--discretion)').forEach((tile) => {
     const img = tile.querySelector('.service__image');
     const overlay = tile.querySelector('.service__overlay');
 
@@ -196,6 +197,46 @@ const HERO_SCALE_END = 0.65;         // "slowly shrinking as the scroll goes dow
       });
     }
   });
+
+  /* 4.5b Absolute Discretion — dedicated smooth zoom.
+   * Stronger scale (1.0 → 1.28) with an eased curve and scrub smoothing
+   * so the image drifts in gradually rather than tracking scroll 1:1.
+   * Overlay reveal is kept consistent with the other fullscreen tiles. */
+  {
+    const tile = document.querySelector('.service--discretion');
+    if (tile) {
+      const img = tile.querySelector('.service__image');
+      const overlay = tile.querySelector('.service__overlay');
+
+      if (img) {
+        gsap.fromTo(img,
+          { scale: 1 },
+          {
+            scale: 1.28,
+            ease: 'power1.inOut',
+            scrollTrigger: {
+              trigger: tile,
+              start: 'top top',
+              end: '+=100%',
+              scrub: 1,        // 1s smoothing — decouples zoom from raw scroll for a softer feel
+            },
+          });
+      }
+      if (overlay) {
+        gsap.from(overlay, {
+          opacity: 0,
+          y: 40,
+          duration: 1.2,
+          ease: 'power2.out',
+          scrollTrigger: {
+            trigger: tile,
+            start: 'top 80%',
+            toggleActions: 'play none none reverse',
+          },
+        });
+      }
+    }
+  }
 
   /* 4.5 Services sequential pin — each .service pins for 1 viewport.
    * Clinical Mastery (index 0) uses `pinSpacing: false` so no extra scroll
