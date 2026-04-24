@@ -11,6 +11,18 @@
  * ─────────────────────────────────────────────────────────────
  */
 
+// Shared pool of collage images. Each medSpa service rotates through
+// these starting at an offset = service index, giving every tile a
+// visually distinct 5-cell grid without hard-coding per-service lists.
+const SERVICE_COLLAGE_IMAGES = [
+  'services/services-botox.jpeg',
+  'services/services-chinjawline.jpeg',
+  'services/services-dermalfillers.jpeg',
+  'services/services-dysport.jpeg',
+  'services/services-injectables.jpeg',
+  'services/services-lipfillers.jpeg',
+]
+
 const CONTENT = {
 
   /* ─── SITE META ─── */
@@ -75,48 +87,56 @@ const CONTENT = {
         name:        'Botox & Neurotoxin Treatments',
         description: 'Expertly placed neuromodulators that smooth, refine, and prevent — without erasing what makes you distinctly you. Our injectors are trained in the art of enhancement, preserving natural expression while delivering results that are polished, never frozen.',
         price:       'Starting from $14 per unit',
+        tags:        ['#neuromodulator', '#preventative', '#natural-look', '#precision', '#aesthetic'],
       },
       {
         id:          'fillers',
         name:        'Dermal Fillers',
         description: 'Restore youthful volume, define facial architecture, and balance your proportions with premium hyaluronic acid fillers. Lip sculpting, cheek augmentation, jawline definition, tear trough correction, and full-face harmonization available.',
         price:       'Consultation required',
+        tags:        ['#hyaluronic-acid', '#volume', '#sculpting', '#harmonization', '#bespoke'],
       },
       {
         id:          'laser',
         name:        'Laser Skin Resurfacing',
         description: 'Medical-grade laser treatments targeting uneven tone, sun damage, fine lines, acne scarring, and textural concerns. Each protocol is selected and calibrated to your skin type, tone, and desired recovery window.',
         price:       'Series packages available',
+        tags:        ['#resurfacing', '#clinical', '#tone', '#texture', '#renewal'],
       },
       {
         id:          'microneedling',
         name:        'Microneedling with PRP',
         description: 'Platelet-Rich Plasma therapy paired with precision microneedling — a powerful regenerative treatment that stimulates collagen production, repairs cellular damage, and restores a luminous, youthful complexion using your body\'s own biology.',
         price:       'Recommended series of 3–6 sessions',
+        tags:        ['#regenerative', '#collagen', '#PRP', '#luminosity', '#biology'],
       },
       {
         id:          'peels',
         name:        'Medical-Grade Chemical Peels',
         description: 'From brightening superficial peels to deep resurfacing protocols, our medical peels are custom-blended and clinician-supervised for maximum efficacy and safety across all skin tones and types.',
         price:       'Formulated per skin concern',
+        tags:        ['#peel', '#brightening', '#clinician-led', '#tone-safe', '#custom-blend'],
       },
       {
         id:          'iv',
         name:        'IV Vitamin & Wellness Therapy',
         description: 'Restoration from within. Our private IV drip lounge offers curated infusion menus designed to replenish, energize, and recover — including radiance, immunity, energy restoration, and executive recovery blends.',
         price:       'Menu available upon request',
+        tags:        ['#wellness', '#infusion', '#recovery', '#immunity', '#executive'],
       },
       {
         id:          'body-contouring',
         name:        'Body Contouring & Sculpting',
         description: 'Non-surgical contouring treatments that reduce stubborn fat, tighten lax skin, and sculpt your silhouette — with no downtime and no compromise. CoolSculpting and radiofrequency-based body treatments available.',
         price:       'Complimentary consultation required',
+        tags:        ['#non-surgical', '#sculpting', '#tightening', '#silhouette', '#no-downtime'],
       },
       {
         id:          'hormone',
         name:        'Hormone & Longevity Consultations',
         description: 'Private consultations with our medical team addressing hormone balance, metabolic wellness, weight management, and longevity — for those who seek a comprehensive, physician-guided approach to feeling exceptional at every age.',
         price:       'By private appointment only',
+        tags:        ['#longevity', '#hormones', '#metabolic', '#private', '#physician-led'],
       },
     ],
   },
@@ -448,16 +468,49 @@ const Render = {
       .join('')
   },
 
-  /** Renders med spa services into [data-render="med-spa-services"] */
+  /** Renders sticky nav list items into [data-render-list="sticky-nav"] */
+  stickyNav(selector = '[data-render-list="sticky-nav"]') {
+    const el = document.querySelector(selector)
+    if (!el) return
+    el.innerHTML = CONTENT.nav.links
+      .map(l => `<li><a href="${l.href}">${l.label}</a></li>`)
+      .join('')
+  },
+
+  /** Renders med spa services as rich kim-work tiles into
+   *  [data-render="med-spa-services"]. Each tile: 5-cell photo collage
+   *  rotated from SERVICE_COLLAGE_IMAGES + AURUM card + text block with
+   *  price, heading, description, and hashtag tags. */
   medSpaServices(selector = '[data-render="med-spa-services"]') {
     const el = document.querySelector(selector)
     if (!el) return
-    el.innerHTML = CONTENT.medSpa.services.map(s => `
-      <div class="service-card" id="${s.id}">
-        <h3 class="service-name">${s.name}</h3>
-        <p class="service-desc">${s.description}</p>
-        <span class="service-price">${s.price}</span>
-      </div>`).join('')
+    el.innerHTML = CONTENT.medSpa.services.map((s, idx) => {
+      const cells = Array.from({ length: 5 }, (_, i) => {
+        const src = SERVICE_COLLAGE_IMAGES[(idx + i) % SERVICE_COLLAGE_IMAGES.length]
+        const priorityAttr = i === 0 ? '' : ' fetchpriority="low"'
+        return `
+          <figure class="work__cell c--${i + 1}">
+            <img src="${src}" alt="${s.name} — visual ${i + 1}" width="510" height="510" loading="lazy" decoding="async"${priorityAttr}>
+          </figure>`
+      }).join('')
+      const tags = (s.tags || []).map(t => `<li>${t}</li>`).join('')
+      return `
+        <kim-work class="work" id="${s.id}">
+          <div class="work__collage">${cells}
+            <figure class="work__cell work__card">
+              <span class="work__card-mark">A</span>
+              <span class="work__card-brand">AURUM</span>
+              <span class="work__card-line">${s.name}</span>
+            </figure>
+          </div>
+          <div class="work__text">
+            <p class="work__price">${s.price}</p>
+            <h3>${s.name}</h3>
+            <p class="work__desc">${s.description}</p>
+            <ul class="work__tags">${tags}</ul>
+          </div>
+        </kim-work>`
+    }).join('')
   },
 
   /** Renders day spa services into [data-render="day-spa-services"] */
@@ -490,15 +543,29 @@ const Render = {
       </div>`).join('')
   },
 
-  /** Renders testimonials into [data-render="testimonials"] */
+  /** Renders testimonials as <figure> cards with SVG guest avatars into
+   *  [data-render="testimonials"]. Avatars pull from assets/guest-0N.svg
+   *  (N = 1-based index). Title is derived from location. */
   testimonials(selector = '[data-render="testimonials"]') {
     const el = document.querySelector(selector)
     if (!el) return
-    el.innerHTML = CONTENT.testimonials.items.map(t => `
-      <div class="testimonial-card">
-        <blockquote class="testimonial-quote">"${t.quote}"</blockquote>
-        <cite class="testimonial-author">— ${t.author}, ${t.location}</cite>
-      </div>`).join('')
+    el.innerHTML = CONTENT.testimonials.items.map((t, i) => {
+      const avatarIdx = String(i + 1).padStart(2, '0')
+      return `
+        <figure class="testimonial-card">
+          <div class="testimonial-glow" aria-hidden="true"></div>
+          <blockquote class="testimonial-quote">${t.quote}</blockquote>
+          <figcaption class="testimonial-credit">
+            <span class="testimonial-avatar">
+              <img src="assets/guest-${avatarIdx}.svg" alt="Aurum guest portrait" width="64" height="64" loading="lazy">
+            </span>
+            <span class="testimonial-meta">
+              <span class="testimonial-name">${t.author}</span>
+              <span class="testimonial-title">Aurum Guest — ${t.location}</span>
+            </span>
+          </figcaption>
+        </figure>`
+    }).join('')
   },
 
   /** Renders the three pillars into [data-render="pillars"] */
@@ -535,6 +602,7 @@ const Render = {
   /** Run all renderers at once */
   all() {
     this.nav()
+    this.stickyNav()
     this.medSpaServices()
     this.daySpaServices()
     this.experiences()

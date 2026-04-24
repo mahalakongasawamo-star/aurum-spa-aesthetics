@@ -1,0 +1,5 @@
+<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 64 64" width="64" height="64" role="img" aria-label="R.A.">
+  <circle cx="32" cy="32" r="32" fill="#F4ECD8"/>
+  <circle cx="32" cy="32" r="30.5" fill="none" stroke="#0F0F0F" stroke-opacity="0.08" stroke-width="1"/>
+  <text x="32" y="40" text-anchor="middle" font-family="Georgia, 'Times New Roman', serif" font-size="20" font-weight="400" fill="#0F0F0F" letter-spacing="1.5">RA</text>
+</svg>
