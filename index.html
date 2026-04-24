@@ -3,15 +3,15 @@
 <head>
   <meta charset="UTF-8" />
   <meta name="viewport" content="width=device-width, initial-scale=1" />
-  <title>Aurum Spa &amp; Aesthetics | Luxury Med Spa &amp; Day Spa — Washington, D.C.</title>
-  <meta name="description" content="Aurum Spa &amp; Aesthetics is Washington D.C.'s premier luxury med spa and day spa, located at 1617 Massachusetts Avenue NW on Embassy Row. Expert injectables, laser treatments, gold facials, massage, and bespoke wellness experiences." />
+  <title>Aurum Spa &amp; Aesthetics | Luxury Med Spa &amp; Day Spa — Beverly Hills, CA</title>
+  <meta name="description" content="Aurum Spa &amp; Aesthetics is Beverly Hills' premier luxury med spa and day spa, located at 9500 Wilshire Blvd. Expert injectables, laser treatments, gold facials, massage, and bespoke wellness experiences for the city's most discerning clientele." />
   <meta name="generator" content="Aurum Spa &amp; Aesthetics" />
-  <meta property="og:title" content="Aurum Spa &amp; Aesthetics — Washington D.C.'s Gold Standard in Luxury &amp; Aesthetics" />
+  <meta property="og:title" content="Aurum Spa &amp; Aesthetics — Beverly Hills' Gold Standard in Luxury &amp; Aesthetics" />
   <meta property="og:type" content="website" />
-  <meta property="og:url" content="https://aurumspadc.com/" />
-  <meta property="og:description" content="Where clinical precision meets restorative luxury. Book your Aurum experience — D.C.'s most exclusive med spa and day spa destination on Embassy Row." />
+  <meta property="og:url" content="https://aurumspabh.com/" />
+  <meta property="og:description" content="Where clinical precision meets restorative luxury. Book your Aurum experience — Beverly Hills' most exclusive med spa and day spa destination on Wilshire Boulevard." />
   <meta property="og:image" content="" />
-  <meta property="og:image:alt" content="Aurum Spa &amp; Aesthetics — Washington, D.C." />
+  <meta property="og:image:alt" content="Aurum Spa &amp; Aesthetics — Beverly Hills, CA" />
   <link rel="stylesheet" href="app/styles/tokens.css" />
   <link rel="stylesheet" href="app/styles/base.css" />
   <link rel="stylesheet" href="app/styles/sections.css" />
@@ -37,8 +37,8 @@
         <h1 data-content="hero.headline"></h1>
         <p class="hero__subheadline" data-content="hero.subheadline"></p>
         <div class="hero__ctas">
-          <a class="btn btn--primary" href="#book" data-content="hero.ctaPrimary"></a>
-          <a class="btn btn--secondary" href="#about" data-content="hero.ctaSecondary"></a>
+          <a class="btn btn--primary btn--shiny" href="#book" data-content="hero.ctaPrimary"></a>
+          <a class="btn btn--secondary btn--shiny" href="#about" data-content="hero.ctaSecondary"></a>
         </div>
       </div>
     </section>
@@ -51,7 +51,7 @@
     <div class="about__images">
       <div class="about__sticker">
         <img class="about__sticker-bg" src="assets/About_02.Di9Nhm44_ZeCWQd.webp" alt="" aria-hidden="true">
-        <img class="about__sticker-fg" src="owner.png" alt="Aurum therapist at work">
+        <img class="about__sticker-fg" src="owners3.png" alt="The three Aurum Spa & Aesthetics owners at the Beverly Hills flagship">
       </div>
       <h2 class="about__tagline" data-content="about.headline"></h2>
     </div>
@@ -103,10 +103,20 @@
         </kim-service>
       </div>
       <div class="pin-spacer">
-        <kim-service class="service">
-          <p class="service__label" data-content="pillars.label"></p>
-          <h3 data-content="pillars.items.2.title"></h3>
-          <p class="service__body" data-content="pillars.items.2.body"></p>
+        <!-- Absolute Discretion — faces at ~20% and ~70% horizontal, middle
+             height. Heading sits in the bottom-left over the paper/table
+             edge; body top-right against the wall/plant area; label top-
+             left over the window. Mirrors Clinical Mastery's layout so the
+             three pillars alternate BL → BR → BL. -->
+        <kim-service class="service service--fullscreen service--heading-bl">
+          <div class="service__image-frame">
+            <img class="service__image" src="absolutediscretion.png" alt="Aurum absolute discretion — private concierge consultation">
+          </div>
+          <div class="service__overlay">
+            <p class="service__label" data-content="pillars.label"></p>
+            <h3 data-content="pillars.items.2.title"></h3>
+            <p class="service__body" data-content="pillars.items.2.body"></p>
+          </div>
         </kim-service>
       </div>
     </div>
@@ -130,48 +140,7 @@
       <svg class="works__deco" aria-hidden="true"></svg>
       <svg class="works__deco" aria-hidden="true"></svg>
     </div>
-    <div class="works__list">
-      <kim-work class="work grid">
-        <h3 data-content="medSpa.services.0.name"></h3>
-        <p data-content="medSpa.services.0.description"></p>
-        <p class="work__price" data-content="medSpa.services.0.price"></p>
-      </kim-work>
-      <kim-work class="work grid">
-        <h3 data-content="medSpa.services.1.name"></h3>
-        <p data-content="medSpa.services.1.description"></p>
-        <p class="work__price" data-content="medSpa.services.1.price"></p>
-      </kim-work>
-      <kim-work class="work grid">
-        <h3 data-content="medSpa.services.2.name"></h3>
-        <p data-content="medSpa.services.2.description"></p>
-        <p class="work__price" data-content="medSpa.services.2.price"></p>
-      </kim-work>
-      <kim-work class="work grid">
-        <h3 data-content="medSpa.services.3.name"></h3>
-        <p data-content="medSpa.services.3.description"></p>
-        <p class="work__price" data-content="medSpa.services.3.price"></p>
-      </kim-work>
-      <kim-work class="work grid">
-        <h3 data-content="medSpa.services.4.name"></h3>
-        <p data-content="medSpa.services.4.description"></p>
-        <p class="work__price" data-content="medSpa.services.4.price"></p>
-      </kim-work>
-      <kim-work class="work grid">
-        <h3 data-content="medSpa.services.5.name"></h3>
-        <p data-content="medSpa.services.5.description"></p>
-        <p class="work__price" data-content="medSpa.services.5.price"></p>
-      </kim-work>
-      <kim-work class="work grid">
-        <h3 data-content="medSpa.services.6.name"></h3>
-        <p data-content="medSpa.services.6.description"></p>
-        <p class="work__price" data-content="medSpa.services.6.price"></p>
-      </kim-work>
-      <kim-work class="work grid">
-        <h3 data-content="medSpa.services.7.name"></h3>
-        <p data-content="medSpa.services.7.description"></p>
-        <p class="work__price" data-content="medSpa.services.7.price"></p>
-      </kim-work>
-    </div>
+    <div class="works__list" data-render="med-spa-services"></div>
   </section>
 
   <!-- 7. Testimonies — auto-rendered from CONTENT.testimonials -->
@@ -179,7 +148,7 @@
     <p class="testimonies__label" data-content="testimonials.label"></p>
     <h2 data-content="testimonials.headline"></h2>
     <div class="testimonies__list" data-render="testimonials"></div>
-    <a class="btn" href="#book" data-content="booking.ctaPrimary"></a>
+    <a class="btn btn--shiny" href="#book" data-content="booking.ctaPrimary"></a>
   </section>
 
   <!-- 8. Book / reservation -->
@@ -188,8 +157,8 @@
     <h2 data-content="booking.headline"></h2>
     <p class="book__body" data-content="booking.body"></p>
     <div class="book__ctas">
-      <a class="btn btn--primary" href="mailto:hello@aurumspaDC.com" data-content="booking.ctaPrimary"></a>
-      <a class="btn btn--secondary" href="tel:+12025550192" data-content="booking.ctaSecondary"></a>
+      <a class="btn btn--primary btn--shiny" href="mailto:hello@aurumspaBH.com" data-content="booking.ctaPrimary"></a>
+      <a class="btn btn--secondary btn--shiny" href="tel:+13103857023" data-content="booking.ctaSecondary"></a>
     </div>
     <p class="book__note" data-content="booking.note"></p>
   </section>
@@ -210,7 +179,7 @@
     <h2 data-content="brand.headline"></h2>
     <div class="club__body" data-content="brand.body"></div>
     <p class="club__pull" data-content="brand.pullQuote"></p>
-    <a class="club__link btn" href="#book" data-content="micro.giftCardBanner.cta"></a>
+    <a class="club__link btn btn--shiny" href="#book" data-content="micro.giftCardBanner.cta"></a>
   </section>
 
   <!-- 11. FAQs — kept as-is; content.js does not supply FAQ data. -->
@@ -250,7 +219,7 @@
     <kim-faq>
       <details>
         <summary>Where is Aurum located?</summary>
-        <div class="faq__answer"><p>We are at 1617 Massachusetts Avenue NW, Washington, D.C., in the heart of Dupont Circle and Embassy Row. Easily reached via the Red Line Metro (Dupont Circle) and with nearby street and garage parking.</p></div>
+        <div class="faq__answer"><p>We are at 9500 Wilshire Blvd, Beverly Hills, CA 90212 — in the heart of Beverly Hills, steps from Rodeo Drive. Easily accessible from the 405 and 10 freeways, with valet parking available and street parking on Wilshire Boulevard.</p></div>
       </details>
     </kim-faq>
   </section>
@@ -269,7 +238,7 @@
     <p class="contact__phone" data-content="contact.phone"></p>
     <p class="contact__email" data-content="contact.email"></p>
     <p class="contact__note" data-content="contact.neighborhoodNote"></p>
-    <a class="contact__link btn" href="mailto:hello@aurumspaDC.com">hello@aurumspaDC.com</a>
+    <a class="contact__link btn btn--shiny" href="mailto:hello@aurumspaBH.com">hello@aurumspaBH.com</a>
     <p class="contact__legal" data-content="footer.legal"></p>
     <div class="contact__social" data-render="footer-nav"></div>
   </section>
